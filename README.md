@@ -1,6 +1,6 @@
 <img src="./images/logo-white.png">
 
-[WeatherApp - Click here](https://thiagotorresferrao.github.io/*******/)
+[Genshin Impact - Click here](https://thiagotorresferrao.github.io/Genshin-Impact/)
 
 🌦️ **Pagina de visualiçção inicial do jogo Genshin Impact**  
 🌍 **Initial viewing page of the game Genshin Impact**
