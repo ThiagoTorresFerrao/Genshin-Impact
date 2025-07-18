@@ -1,0 +1,115 @@
+body{
+    font-family: 'genshin font', sans-serif;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+main::after{
+    content:'' ;
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.05926120448179273) 50%, rgba(0, 0, 0, 1) 90%);
+    z-index: -1;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-evenly;
+}
+
+
+.info .logo{
+    filter: invert(1);
+    max-width: 350px;
+    margin-bottom: 80px;
+}
+
+.info .descricao{
+    width: 40%;
+    font-size: 20px;
+    color: white;
+    line-height: 30px;
+}
+
+.carousel-btn{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.carousel-btn .botao{
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border-style:none ;
+    cursor: pointer;
+}
+
+.carousel-btn .botao.selecionado{
+    background-color:#e65762;
+} 
+
+.menu-lateral{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.menu-lateral ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-lateral .icon{
+    width: 30px;
+    filter: invert(1);
+    transition: 0.3s ease-in-out;
+    
+}
+
+.menu-lateral .icon:hover{
+    transform: scale(1.2);
+}
+
+.carousel{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.carousel .imagem{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+    animation: mudarImagem 0.5s;
+}
+
+.carousel .imagem.ativa{
+    display: block;
+}
+
+
+
+@keyframes mudarImagem {
+	from {
+		opacity: 0.85;
+	}
+	to {
+		opacity: 1;
+	}
+}
