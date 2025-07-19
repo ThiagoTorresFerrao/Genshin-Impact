@@ -21,7 +21,7 @@ This is a presentation page created to showcase the game Genshin Impact.
 
 - HTML5
 - CSS3
-- JavaScript (ES6+)
+- JavaScript
 
 ---
 
