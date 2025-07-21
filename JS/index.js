@@ -1,24 +1,37 @@
+// Seleciona todos os botões e imagens do carrossel
+const botoes = document.querySelectorAll('.carousel-btn .botao');
+const imagens = document.querySelectorAll('.carousel .imagem');
 
+// Índice da imagem atual e tempo de troca
+let imagemAtual = 0;
+const tempo = 4000;
 
-//dar um jeito de pegar o elemento HTML dos botões
-const botoesCarousel = document.querySelectorAll('.botao');
-const imagens = document.querySelectorAll('.imagem');
+// Função para exibir a imagem e botão correspondente
+function mostrarImagem(index) {
+  // Remove classes anteriores
+  imagens.forEach((img, i) => {
+    img.classList.remove('ativa');
+    botoes[i].classList.remove('selecionado');
+  });
 
-//Dar um jeito de identificar o clique do usuário no botão
-botoesCarousel.forEach((botao, indice) => {
-    botao.addEventListener('click', () =>{
+  // Adiciona classes à imagem e botão atuais
+  imagens[index].classList.add('ativa');
+  botoes[index].classList.add('selecionado');
+}
 
-        //desmarcar o botão selecionado anterior
-        const botaoSelecionado = document.querySelector('.selecionado');
-        botaoSelecionado.classList.remove('selecionado');
+// Função que avança para a próxima imagem
+function proximaImagem() {
+  imagemAtual = (imagemAtual + 1) % imagens.length;
+  mostrarImagem(imagemAtual);
+}
 
-       // marcar o botão clicado como se yivesse selecionado
-        botao.classList.add('selecionado');
+// Inicia a troca automática de imagens
+setInterval(proximaImagem, tempo);
 
-       //esconder imagem ativa de fundo anterior
-        const imagemAtiva = document.querySelector('.ativa'); imagemAtiva.classList.remove('ativa')
-
-        //fazer aparecer a imagem do fundo correspondente ao botão clicado
-       imagens[indice].classList.add('ativa'    )
-    })
-})
+// Permite clicar nos botões para trocar manualmente
+botoes.forEach((botao, index) => {
+  botao.addEventListener('click', () => {
+    imagemAtual = index;
+    mostrarImagem(index);
+  });
+});

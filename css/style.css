@@ -91,17 +91,35 @@ main::after{
     z-index: -1;
 }
 
-.carousel .imagem{
+.carousel {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
-    object-fit: cover;
-    display: none;
-    animation: mudarImagem 0.5s;
+    z-index: -1;
+    overflow: hidden;
 }
 
-.carousel .imagem.ativa{
-    display: block;
+.carousel .imagem {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 1s ease-in-out;
+    pointer-events: none;
 }
+
+.carousel .imagem.ativa {
+    opacity: 1;
+    z-index: 1;
+    pointer-events: auto;
+}
+
 
 
 
